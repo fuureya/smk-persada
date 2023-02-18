@@ -283,6 +283,13 @@
     transform: scale(1.1);
 }
 
+/* kontak */
+.container > h3
+{
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+
 
 /* responsive mobile */
 @media screen and (min-device-width: 0px) and (max-device-width: 480px) {
