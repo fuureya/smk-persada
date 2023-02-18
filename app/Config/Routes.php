@@ -44,6 +44,11 @@ $routes->get('/kontak-kami', function(){
     return view('kontak-kami', $data);
 });
 
+$routes->get('/login', function(){
+    $data = ["title" => "Login Page"];
+    return view('login', $data);
+});
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
