@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* logo persada */
+.logo-persada {
+    width: 50px;
+}
+
+/* navbar style */
+.nav-item.mx-auto a {
+    font-size: 1rem;
+}
+
+.dropdown-menu.dropdown-menu-left.bg-dark {
+    border: none;
+    border-radius: none;
+}
+
+.dropdown-item:hover {
+    background-color: #333;
+}
+
+/* jumbotron */
+.content {
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+}
+
+.secs .lead.text-center {
+    font-weight: bold;
+}
+
+.secs p {
+    font-size: 4rem;
+    font-weight: 900;
+}
+
+/* carousel */
+.carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+}
+
+/* button */
+.text-center.font-weight-bold {
+    font-size: 1.2rem;
+    font-weight: 900;
+}
+
+.col-4.col-md-4.text-center.py-3 .lead {
+    font-size: 17px;
+}
+
+.fa-sharp.fa-solid.fa-house.fa-3x.text-success.py-3 {
+    font-size: 2rem;
+}
+
+.fa-sharp.fa-solid.fa-chalkboard-user.fa-3x.text-light.py-3 {
+    font-size: 2rem;
+}
+
+.fa-solid.fa-book.fa-3x.text-success.py-3 {
+    font-size: 2rem;
+}
+
+.text-center.font-weight-bold {
+    font-size: 16px;
+}
+
+.col-4.col-md-4 p {
+    font-size: 14px;
+}
+
+.kenapa h3
+{ 
+        font-family: 'Poppins', sans-serif;
+        font-weight: bold;
+}
+
+
+
+.kenapa b
+{ 
+        font-family: 'Poppins', sans-serif;
+        font-weight: bold;
+}
+
+.kenapa-desc > h3
+{ 
+        font-family: 'Poppins', sans-serif;
+        font-weight: bold;
+
+}
+
+.kenapa-desc > .text-center > p
+{
+    font-size: 5px;
+}
+
+/* kepsek section */
+.sambutan .p-0 h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+}
+
+
+.sambutan .p-0 h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.sambutan .p-0 p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+
+.kenapa-desc h3
+{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.kenapa-desc p
+{
+    font-size: 1rem;
+}
+
+
+/* PERSADA GALLERY */
+.header-gallery .text-center {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.gallery {
+    margin: 0;
+    padding: 5px;
+}
+
+.gallery img {
+    width: 100%;
+    filter: grayscale(100%);
+    transition: 0.5s;
+}
+
+.gallery img:hover {
+    filter: grayscale(0);
+    transform: scale(1.1);
+}
+
+/* sertivikasi */
+.sertivikasi {
+    margin: 0;
+    padding: 5px;
+}
+
+.col-md-3.col-6.p-0 p {
+    font-family: 'Poppins', sans-serif;
+}
+
+.sertivikasi img {
+    width: 100%;
+    filter: grayscale(100%);
+    transition: 0.5s;
+}
+
+.sertivikasi img:hover {
+    filter: grayscale(0);
+    transform: scale(1.1);
+}
+
+/* footer persada */
+.container-fluid.footer {
+    margin-top: 10rem;
+}
+
+.col-md-4.col-12 h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+}
+
+.col-md-4.col-12 h5 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: white;
+}
+
+.col-md-4.col-12 p {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+.col-md-4.col-12 i {
+    color: white;
+    font-size: 4rem;
+}
+
+.gutter-footer h5 {
+    font-family: 'Poppins', sans-serif;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 13px;
+    color: white;
+    font-weight: bold;
+}
+
+.col-12.col-md-12>.persada-first>h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+.col-12.col-md-12>.program-keahlian>h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+/* about page */
+
+.col-md-2.col-6>h5 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+.col-md-2.col-6>i {
+    font-size: 4rem;
+}
+
+.visi>h3 {
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+
+.visi>h3>b {
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+
+.misi>h3 {
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+
+.foto-guru img {
+    border-radius: 100%;
+}
+
+.misi>h3>b {
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+
+.guru h3
+{
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+
+.nama-guru h3 {
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+}
+
+.foto-guru img {
+    filter: grayscale(100%);
+    transition: 0.5s;
+}
+
+.foto-guru img:hover {
+    filter: grayscale(0);
+    transform: scale(1.1);
+}
+
+
+/* responsive mobile */
+@media screen and (min-device-width: 0px) and (max-device-width: 480px) {
+
+    .secs .lead.text-center {
+        font-weight: bold;
+    }
+
+    .secs p {
+        font-size: 2rem;
+        font-weight: 900;
+    }
+
+    .secs h3 {
+        font-size: 1rem;
+    }
+
+    /* button section */
+    .fa-sharp {
+        font-size: 2.5rem;
+    }
+
+    .fa-solids {
+        font-size: 2.5rem;
+    }
+
+    /* button */
+
+    .fa-sharp.fa-solid.fa-house.fa-3x.text-success.pb-3 {
+        font-size: 2rem;
+    }
+
+    .fa-sharp.fa-solid.fa-chalkboard-user.fa-3x.text-light.pb-3 {
+        font-size: 2rem;
+    }
+
+    .fa-solid.fa-book.fa-3x.text-success.pb-3 {
+        font-size: 2rem;
+    }
+
+    .text-center.font-weight-bold {
+        font-size: 12px;
+        font-weight: 900;
+    }
+
+    .col-4.col-md-4.text-center.py-3 .lead {
+        font-size: 10px;
+        font-weight: bold;
+    }
+
+    .sambutan .p-0 h2 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.2rem;
+    }
+
+    .sambutan .p-0 h4 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .sambutan .p-0 p {
+        font-family: 'Poppins', sans-serif;
+        font-size: 10px;
+    }
+
+    /* about page */
+    .col-md-2.col-6>h5 {
+        font-size: 0.6rem;
+    }
+
+    .col-md-2.col-6>i {
+        font-size: 3rem;
+    }
+
+    .nama-guru h3 {
+        font-weight: bold;
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.7rem;
+    }
+
+
+
+}
