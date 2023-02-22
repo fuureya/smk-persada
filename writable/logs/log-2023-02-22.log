@@ -1,0 +1,24 @@
+CRITICAL - 2023-02-22 00:53:50 --> Invalid file: "main.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('main.php')
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->render('main', [], true)
+ 3 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('daftar-smk', [], true)
+ 4 APPPATH\Controllers\PendaftarController.php(9): view('daftar-smk')
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PendaftarController->smk()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PendaftarController))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-22 00:54:10 --> Undefined variable $title
+in APPPATH\Views\layouts\main.php on line 16.
+ 1 APPPATH\Views\layouts\main.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $title', 'APPPATH\\Views\\layouts\\main.php', 16)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\layouts\\main.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->render('layouts/main', [], true)
+ 5 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('daftar-smk', [], true)
+ 6 APPPATH\Controllers\PendaftarController.php(9): view('daftar-smk')
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\PendaftarController->smk()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PendaftarController))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')

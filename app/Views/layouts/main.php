@@ -13,7 +13,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style/css/style.css">
     <!-- login style  -->
-    <link rel="stylesheet" href="style/css/login.css">
+    <link rel="icon" href="img/logo01.png">
     <title><?= $title ?></title>
     <style>
     </style>

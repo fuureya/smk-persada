@@ -49,6 +49,14 @@ $routes->get('/login', function(){
     return view('login', $data);
 });
 
+$routes->get('/admin', function(){
+    $data = ["title" => "admin"];
+    return view('admin/admin-smk', $data);
+});
+
+$routes->get('/daftarsmk', "PendaftarController::smk");
+$routes->get('/daftarsmp', "PendaftarController::smp");
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
