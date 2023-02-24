@@ -49,22 +49,18 @@
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
-
             <!-- Divider -->
             <hr class="sidebar-divider">
-
             <!-- Heading -->
             <div class="sidebar-heading">
                 Interface
             </div>
-
             <!-- Nav Item - Tables -->
             <li class="nav-item active">
                 <a class="nav-link" href="tables.html">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Data Pendaftar</span></a>
             </li>
-
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
@@ -184,27 +180,27 @@
                                             <th>Nomor Orangtua/Wali</th>
                                             <th>Jurusan</th>
                                             <th>Siap Mengikuti</th>
+                                            <th>Status Pendaftar</th>
                                             <th>Tanggal Mendaftar</th>
                                             <th>Terakhir di edit</th>
-                                            <th>Status Pendaftar</th>
                                             <th>Action</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
+                                        <?php foreach($body as $data) : ?>
                                         <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>085757882739</td>
-                                            <td>Subaedah</td>
-                                            <td>085757882634</td>
-                                            <td>Teknik Komputer Jaringan</td>
-                                            <td>Siap Mengikuti</td>
-                                            <td>19-19-2022</td>
-                                            <td>19-19-2022</td>
-                                            <td>Belum Registrasi</td>
-                                            <td>icon hapus | icon edit</td>
+                                            <td><?= $data["nama_pendaftar"] ?></td>
+                                            <td><?= $data["wa_siswa"] ?></td>
+                                            <td><?= $data["nama_wali"] ?></td>
+                                            <td><?= $data["wa_ortu"] ?></td>
+                                            <td><?= $data["jurusan"] ?></td>
+                                            <td><?= $data["siap_mengikuti"] ?></td>
+                                            <td><?= $data["tanggal_daftar"] ?></td>
+                                            <td><?= $data["di_update"] ?></td>
+                                            <td><?= $data["status_pendaftar"] ?></td>
+                                            <td><a class="btn btn-danger badge" href="/hapus">Hapus</a><a class="btn btn-warning badge" href="/update">Update</a></td>
                                         </tr>
-                                       
-                                        
+                                        <?php endforeach ?>
                                     </tbody>
                                 </table>
                             </div>
