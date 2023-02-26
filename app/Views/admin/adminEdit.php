@@ -13,10 +13,11 @@
 
     <!-- Custom fonts for this template -->
     <link href="<?= base_url('dist/vendor/fontawesome-free/css/all.min.css') ?>" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="<?= base_url('https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i') ?>" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="<?= base_url('dist/css/sb-admin-2.min.css') ?>" rel="stylesheet">
+
     <!-- Custom styles for this page -->
     <link href="<?= base_url('dist/vendor/datatables/dataTables.bootstrap4.min.css') ?>" rel="stylesheet">
 
@@ -33,7 +34,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon">
-                    <img src="<?= base_url('img/logo01.png') ?>" alt="" class="img-fluid" style="width: 50px;">
+                    <img src="<?= base_url('img/logo01.png') ?>" alt="logo-persada" class="img-fluid" style="width: 50px;">
                 </div>
                 <br>
                 <div class="sidebar-brand-text mx-3">Admin Page</div>
@@ -135,52 +136,51 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Data Pendaftar Siswa SMK PERSADA</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Edit Pendaftar</h1>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Kumpulan Data</h6>
-                        </div>
+
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>Nama Siswa</th>
-                                            <th>Tempat Lahir</th>
-                                            <th>Tangal Lahir</th>
-                                            <th>No Whatsapp Siswa</th>
-                                            <th>Nama Orangtua/Wali</th>
-                                            <th>Nomor Orangtua/Wali</th>
-                                            <th>Jurusan</th>
-                                            <th>Siap Mengikuti</th>
-                                            <th>Status</th>
-                                            <th>Tanggal Pendaftaran</th>
-                                            <th>Tanggal di Edit</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                   
-                                    <tbody>
-                                        <?php foreach($body as $data) : ?>
-                                        <tr>
-                                            <td><?= $data["nama_pendaftar"] ?></td>
-                                            <td><?= $data["tempat-lahir"] ?></td>
-                                            <td><?= $data["tanggal-lahir"] ?></td>
-                                            <td><?= $data["wa_siswa"] ?></td>
-                                            <td><?= $data["nama-ortu"] ?></td>
-                                            <td><?= $data["wa_ortu"] ?></td>
-                                            <td><?= $data["jurusan"] ?></td>
-                                            <td><?= $data["siap_mengikuti"] ?></td>
-                                            <td><?= $data["status_pendaftar"] ?></td>
-                                            <td><?= $data["tanggal_daftar"] ?></td>
-                                            <td><?= $data["tanggal_edit"] ?></td>
-                                            <td><a class="btn btn-danger badge" href="/hapus/<?= $data["id"]?>/delete">Hapus</a><a class="btn btn-warning badge" href="/edit/<?= $data["id"]?>">Update</a></td>
-                                        </tr>
-                                        <?php endforeach ?>
-                                    </tbody>
-                                </table>
+                                <form id="editpendaftar" method="post">
+                                <?= csrf_field(); ?>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Edit Nama Pendaftar</label>
+                                        <input type="text" class="form-control" id="nama_Pendaftar" name="nama_pendaftar" value="<?= $body["nama_pendaftar"] ?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="tempat-lahir">Edit Tempat Lahir</label>
+                                        <input type="text" class="form-control" id="tempat-lahir" name="tempat-lahir" value="<?= $body["tempat-lahir"] ?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="tanggal-lahir">Edit Tanggal Lahir</label>
+                                        <input type="date" class="form-control" id="tanggal-lahir" name="tanggal-lahir" value="<?= $body["tanggal-lahir"] ?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="wa-pendaftar">Edit Whatsapp Pendaftar</label>
+                                        <input type="text" class="form-control" id="wa-pendaftar" name="wa-pendaftar" value="<?= $body["wa_siswa"] ?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="nama-ortu">Edit Nama Orangtua/Wali</label>
+                                        <input type="text" class="form-control" id="nama-ortu" name="nama-ortu" value="<?= $body["nama-ortu"] ?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="wa-wali">Edit Whatsapp Ortu/wali</label>
+                                        <input type="text" class="form-control" id="wa-wali" name="wa-wali" value="<?= $body["wa_ortu"] ?>">
+                                    </div>
+                                    <div>
+                                        <label>Edit Status</label>
+                                    </div>
+                                    <select class="form-select" aria-label="Default select example" form="editpendaftar" name="status" >
+                                        <option value="Belum Registrasi Ulang" name="belum">Belum Registrasi Ulang</option>
+                                        <option value="Telah Registrasi Ulang" name="telah">Telah Registrasi Ulang</option>
+                                    </select>
+
+                                    <div class="mt-5">
+                                    <button type="submit" class="btn btn-success">Edit Data Pendaftar</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>

@@ -11,9 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <!-- font awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style/css/style.css">
+    <link rel="stylesheet" href="<?= base_url('style/css/style.css') ?>">
     <!-- login style  -->
-    <link rel="icon" href="img/logo01.png">
+    <link rel="icon" href="<?= base_url('img/logo01.png') ?>">
     <title><?= $title ?></title>
     <style>
     </style>
@@ -27,7 +27,7 @@
     <?= $this->include('layouts/footer'); ?>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
-    <script src="lib/lightbox/fslightbox.js"></script>
+    <script src="<?= base_url('lib/lightbox/fslightbox.js') ?>"></script>
 </body>
 
 </html>

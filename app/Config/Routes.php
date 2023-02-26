@@ -49,12 +49,17 @@ $routes->get('/login', function(){
     return view('login', $data);
 });
 
- 
-$routes->get('/admin', 'PendaftarController::viewSmk');
-// form controllers
-$routes->get('/daftarsmk', "PendaftarController::smk");
+
+// route smk 
+$routes->get('/admin', 'PendaftarSmkController::viewSmk');
+$routes->get('/daftarsmk', "PendaftarSmkController::index");
+$routes->post('/daftarsmk', "PendaftarSmkController::smkInsert");
+$routes->get('/hapus/(:segment)/delete', "PendaftarSmkController::smkDelete/$1");
+$routes->get('/edit/(:segment)', "PendaftarSmkController::getDataEdit/$1");
+$routes->post('/edit/(:segment)', "PendaftarSmkController::smkEdit/$1");
+// route smp
 $routes->get('/daftarsmp', "PendaftarController::smp");
-$routes->post('/daftarsmk', "PendaftarController::smkInsert");
+$routes->post('/daftarsmp', "PendaftarController::smpInsert");
 
 /*
  * --------------------------------------------------------------------

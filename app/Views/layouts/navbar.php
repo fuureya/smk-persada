@@ -1,6 +1,6 @@
 <!-- navbar section -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-success px-md-5">
-        <img src="img/logo01.png" class="img-fluid logo-persada" alt="logo-persada">
+        <img src="<?= base_url('img/logo01.png') ?>" class="img-fluid logo-persada" alt="logo-persada">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
