@@ -44,14 +44,11 @@ $routes->get('/kontak-kami', function(){
     return view('kontak-kami', $data);
 });
 
-$routes->get('/login', function(){
-    $data = ["title" => "Login Page"];
-    return view('login', $data);
-});
+
 
 
 // route smk 
-$routes->get('/admin', 'PendaftarSmkController::viewSmk');
+
 $routes->get('/daftarsmk', "PendaftarSmkController::index");
 $routes->post('/daftarsmk', "PendaftarSmkController::smkInsert");
 $routes->get('/hapus/(:segment)/delete', "PendaftarSmkController::smkDelete/$1");
@@ -60,6 +57,17 @@ $routes->post('/edit/(:segment)', "PendaftarSmkController::smkEdit/$1");
 // route smp
 $routes->get('/daftarsmp', "PendaftarController::smp");
 $routes->post('/daftarsmp', "PendaftarController::smpInsert");
+
+
+// login route
+
+// filter login
+
+$routes->get('/login', "LoginController::index", ['filter' => 'TelahLoginFilter']);
+$routes->post('/login', "LoginController::login");
+$routes->get('/admin', 'PendaftarSmkController::viewSmk', ["filter" => "AdminFilters"]);
+
+
 
 /*
  * --------------------------------------------------------------------
