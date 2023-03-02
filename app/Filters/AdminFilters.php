@@ -11,7 +11,8 @@ class AdminFilters implements FilterInterface
     public function before(RequestInterface $request, $arguments = null)
     {
         // Do something here
-        if(!session()->get('member_id'))
+        // jika belum login
+        if(!session()->get('member_username'))
         {
             return redirect()->to('login');
         }
@@ -19,7 +20,10 @@ class AdminFilters implements FilterInterface
 
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
-        // Do something here
-        
+       
+        if(session()->get("member_username") != 'admin')
+        {
+            redirect()->back();
+        }
     }
 }

@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\PendaftarModel;
-use App\Models\PendaftarSmkModel;
+use App\Models\PendaftarSmpModel;
 
 class PendaftarSmpController extends BaseController
 {
@@ -22,7 +22,8 @@ class PendaftarSmpController extends BaseController
 
     public function insertSmp()
     {
-        $pendaftar = new PendaftarSmkModel();
+        date_default_timezone_set("Asia/Makassar");
+        $pendaftar = new PendaftarSmpModel();
         // validasi form
         if (!$this->validate([
             "nama" => [
@@ -66,13 +67,6 @@ class PendaftarSmpController extends BaseController
                     "min_length" => "Nomor tidak boleh kurang dari 3 angka"
                 ]
             ],
-
-            "jurusan" => [
-                "rules" => 'required',
-                "errors" => [
-                    "required" => " Wajib memilih jurusan"
-                ]
-            ],
             "siap" => [
                 "rules" => 'required',
                 "errors" => [
@@ -86,10 +80,10 @@ class PendaftarSmpController extends BaseController
 
         $pendaftar->insert([
             "nama_pendaftar" => $this->request->getPost('nama'),
-            "tempat_lahir" => $this->request->getPost("tempat"),
-            "ttl" => $this->request->getVar('ttl'),
+            "tempat-lahir" => $this->request->getPost("tempat"),
+            "ttl" => $this->request->getPost('ttl'),
             "wa_siswa" => $this->request->getPost('no-wa'),
-            "nama_wali" => $this->request->getPost('ortu'),
+            "nama-ortu" => $this->request->getPost('ortu'),
             "wa_ortu" => $this->request->getPost('wa-wali'),
             "siap_mengikuti" => $this->request->getPost('siap'),
             "status_pendaftar" => "belum registrasi ulang",
@@ -101,6 +95,58 @@ class PendaftarSmpController extends BaseController
 
     public function viewSmp()
     {
-        
+        $pendafatar = new PendaftarSmpModel();
+        $data = [
+            "title" => "admin",
+            "body" => $pendafatar->findAll()
+        ];
+        return view('admin/admin-smp', $data);
+    }
+
+    public function viewGuestSmp()
+    {
+        $pendafatar = new PendaftarSmpModel();
+        $data = [
+            "title" => "Monitor Pendaftar",
+            "body" => $pendafatar->findAll()
+        ];
+        return view('admin/guest-smp', $data);
+    }
+
+    public function smpDelete($nama)
+    {
+        $namaPendaftar = new PendaftarSmpModel();
+        $namaPendaftar->delete($nama);
+        return redirect('adminsmp');
+    }
+
+    public function getEditSmp($id)
+    {
+        $pendafatar = new PendaftarSmpModel();
+        $id = $pendafatar->where('id', $id)->first();
+        $data = [
+            "title" => "admin",
+            "body" => $id
+        ];
+        return view('admin/adminEditSmp', $data);
+    }
+
+    public function editSmp($edit)
+    {
+        date_default_timezone_set("Asia/Makassar");
+        $pendaftar = new PendaftarSmpModel();
+        $id = $pendaftar->where('id', $edit)->first();
+        $updateData = [
+            "nama_pendaftar" => $this->request->getPost('nama_pendaftar'),
+            "tempat-lahir" => $this->request->getPost("tempat-lahir"),
+            "tanggal-lahir" => $this->request->getVar('tanggal-lahir'),
+            "wa_siswa" => $this->request->getPost('wa-pendaftar'),
+            "nama-ortu" => $this->request->getPost('nama-ortu'),
+            "wa_ortu" => $this->request->getPost('wa-wali'),
+            "status_pendaftar" => $this->request->getPost('status'),
+            "tanggal_edit" => date("Y-m-d h-i-sa")
+        ];
+        $pendaftar->update($id, $updateData);
+        return redirect('adminsmp');
     }
 }

@@ -30,6 +30,16 @@ class PendaftarSmkController extends BaseController
         return view('admin/admin-smk', $data);
     }
 
+    public function viewGuestSmk()
+    {
+        $pendafatar = new PendaftarSmkModel();
+        $data = [
+            "title" => "Monitoring Pendaftar",
+            "body" => $pendafatar->findAll()
+        ];
+        return view('admin/guest-smk', $data);
+    }
+
     public function smkInsert()
     {
         $pendaftar = new PendaftarSmkModel();

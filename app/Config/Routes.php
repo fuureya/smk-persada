@@ -56,17 +56,21 @@ $routes->get('/edit/(:segment)', "PendaftarSmkController::getDataEdit/$1");
 $routes->post('/edit/(:segment)', "PendaftarSmkController::smkEdit/$1");
 // route smp
 $routes->get('/daftarsmp', "PendaftarSmpController::smp");
-$routes->post('/daftarsmp', "PendaftarController::smpInsert");
+$routes->post('/daftarsmp', "PendaftarSmpController::insertSmp");
+$routes->get('/adminsmp', 'PendaftarSmpController::viewSmp');
+$routes->get('/hapus/(:segment)/hapus', "PendaftarSmpController::smpDelete/$1");
+$routes->get('/editsmp/(:segment)', "PendaftarSmpController::getEditSmp/$1");
+$routes->post('/editsmp/(:segment)', "PendaftarSmpController::editSmp/$1");
 
-
-// login route
-
-// filter login
+// login route & filter login
 $routes->get('/login', "LoginController::index", ['filter' => 'TelahLoginFilter']);
 $routes->post('/login', "LoginController::login");
 $routes->get('/admin', 'PendaftarSmkController::viewSmk', ["filter" => "AdminFilters"]);
 $routes->get('/logout', 'LoginController::logout', ["filter" => "LogoutFilters"]);
 
+// route admin & nonadmin
+$routes->get('/guestsmk', "PendaftarSmkController::viewGuestSmk");
+$routes->get('/guestsmp', "PendaftarSmpController::viewGuestSmp");
 
 /*
  * --------------------------------------------------------------------

@@ -6,8 +6,6 @@ use Config\App;
 
 class LoginController extends BaseController
 {
-
-
     protected $member;
 
     public function __construct()
@@ -50,7 +48,16 @@ class LoginController extends BaseController
                     "member_password" => $dataMember["member_password"]
                 ];
                 session()->set($dataSesi);
-                return redirect()->to('/admin');
+
+                if($dataSesi["member_username"] == 'oktaguest')
+                {
+                    return redirect()->to('guestsmk');
+                }
+
+                if($dataSesi["member_username"] == 'ahmadguest')
+                {
+                    return redirect()->to('guestsmp');
+                }
             }
 
             // mengirim message error 
