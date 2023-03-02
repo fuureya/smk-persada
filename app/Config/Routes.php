@@ -55,18 +55,17 @@ $routes->get('/hapus/(:segment)/delete', "PendaftarSmkController::smkDelete/$1")
 $routes->get('/edit/(:segment)', "PendaftarSmkController::getDataEdit/$1");
 $routes->post('/edit/(:segment)', "PendaftarSmkController::smkEdit/$1");
 // route smp
-$routes->get('/daftarsmp', "PendaftarController::smp");
+$routes->get('/daftarsmp', "PendaftarSmpController::smp");
 $routes->post('/daftarsmp', "PendaftarController::smpInsert");
 
 
 // login route
 
 // filter login
-
 $routes->get('/login', "LoginController::index", ['filter' => 'TelahLoginFilter']);
 $routes->post('/login', "LoginController::login");
 $routes->get('/admin', 'PendaftarSmkController::viewSmk', ["filter" => "AdminFilters"]);
-
+$routes->get('/logout', 'LoginController::logout', ["filter" => "LogoutFilters"]);
 
 
 /*

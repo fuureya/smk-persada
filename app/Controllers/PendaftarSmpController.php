@@ -5,7 +5,7 @@ namespace App\Controllers;
 use App\Models\PendaftarModel;
 use App\Models\PendaftarSmkModel;
 
-class PendaftarController extends BaseController
+class PendaftarSmpController extends BaseController
 {
     public function smp()
     {

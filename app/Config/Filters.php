@@ -3,6 +3,7 @@
 namespace Config;
 
 use App\Filters\AdminFilters;
+use App\Filters\LogoutFilters;
 use App\Filters\TelahLoginFilter;
 use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Filters\CSRF;
@@ -24,7 +25,8 @@ class Filters extends BaseConfig
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
         'AdminFilters' => AdminFilters::class,
-        'TelahLoginFilter' => TelahLoginFilter::class
+        'TelahLoginFilter' => TelahLoginFilter::class,
+        'LogoutFilters' => LogoutFilters::class
     ];
 
     /**

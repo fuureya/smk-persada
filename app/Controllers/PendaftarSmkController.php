@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\PendaftarModel;
 use App\Models\PendaftarSmkModel;
+use CodeIgniter\I18n\Time;
 
 class PendaftarSmkController extends BaseController
 {
@@ -92,17 +93,18 @@ class PendaftarSmkController extends BaseController
             return redirect()->back();
         }
 
+        date_default_timezone_set("Asia/Makassar");
         $pendaftar->insert([
-            "nama_pendaftar" => $this->request->getPost('nama'),
-            "tempat-lahir" => $this->request->getPost("tempat"),
-            "tanggal-lahir" => $this->request->getVar('tgl-lahir'),
-            "wa_siswa" => $this->request->getPost('no-wa'),
-            "nama-ortu" => $this->request->getPost('ortu'),
-            "wa_ortu" => $this->request->getPost('wa-wali'),
-            "jurusan" => $this->request->getPost('jurusan'),
-            "siap_mengikuti" => $this->request->getPost('siap'),
-            "status_pendaftar" => "belum registrasi ulang",
-            "tanggal_daftar" => date("Y-m-d h-i-sa")
+            "nama_pendaftar" => htmlspecialchars($this->request->getPost('nama')),
+            "tempat-lahir" => htmlspecialchars($this->request->getPost("tempat")),
+            "tanggal-lahir" => htmlspecialchars($this->request->getVar('tgl-lahir')),
+            "wa_siswa" => htmlspecialchars($this->request->getPost('no-wa')),
+            "nama-ortu" => htmlspecialchars($this->request->getPost('ortu')),
+            "wa_ortu" => htmlspecialchars($this->request->getPost('wa-wali')),
+            "jurusan" => htmlspecialchars($this->request->getPost('jurusan')),
+            "siap_mengikuti" => htmlspecialchars($this->request->getPost('siap')),
+            "status_pendaftar" => htmlspecialchars("belum registrasi ulang"),
+            "tanggal_daftar" => htmlspecialchars(date("Y-m-d h-i-sa"))
         ]);
         return redirect()->back();
     }
@@ -127,6 +129,7 @@ class PendaftarSmkController extends BaseController
 
     public function smkEdit($edit)
     {
+        date_default_timezone_set("Asia/Makassar");
         $pendaftar = new PendaftarSmkModel();
         $id = $pendaftar->where('id', $edit)->first();
         $updateData = [
