@@ -51,16 +51,16 @@ $routes->get('/kontak-kami', function(){
 
 $routes->get('/daftarsmk', "PendaftarSmkController::index");
 $routes->post('/daftarsmk', "PendaftarSmkController::smkInsert");
-$routes->get('/hapus/(:segment)/delete', "PendaftarSmkController::smkDelete/$1");
-$routes->get('/edit/(:segment)', "PendaftarSmkController::getDataEdit/$1");
-$routes->post('/edit/(:segment)', "PendaftarSmkController::smkEdit/$1");
+$routes->get('/hapus/(:segment)/delete', "PendaftarSmkController::smkDelete/$1", ["filter" => "AdminFilters"]);
+$routes->get('/edit/(:segment)', "PendaftarSmkController::getDataEdit/$1", ["filter" => "AdminFilters"]);
+$routes->post('/edit/(:segment)', "PendaftarSmkController::smkEdit/$1", ["filter" => "AdminFilters"]);
 // route smp
 $routes->get('/daftarsmp', "PendaftarSmpController::smp");
 $routes->post('/daftarsmp', "PendaftarSmpController::insertSmp");
-$routes->get('/adminsmp', 'PendaftarSmpController::viewSmp');
-$routes->get('/hapus/(:segment)/hapus', "PendaftarSmpController::smpDelete/$1");
-$routes->get('/editsmp/(:segment)', "PendaftarSmpController::getEditSmp/$1");
-$routes->post('/editsmp/(:segment)', "PendaftarSmpController::editSmp/$1");
+$routes->get('/adminsmp', 'PendaftarSmpController::viewSmp', ["filter" => "AdminFilters"]);
+$routes->get('/hapus/(:segment)/hapus', "PendaftarSmpController::smpDelete/$1", ["filter" => "AdminFilters"]);
+$routes->get('/editsmp/(:segment)', "PendaftarSmpController::getEditSmp/$1", ["filter" => "AdminFilters"]);
+$routes->post('/editsmp/(:segment)', "PendaftarSmpController::editSmp/$1", ["filter" => "AdminFilters"]);
 
 // login route & filter login
 $routes->get('/login', "LoginController::index", ['filter' => 'TelahLoginFilter']);
@@ -69,8 +69,8 @@ $routes->get('/admin', 'PendaftarSmkController::viewSmk', ["filter" => "AdminFil
 $routes->get('/logout', 'LoginController::logout', ["filter" => "LogoutFilters"]);
 
 // route admin & nonadmin
-$routes->get('/guestsmk', "PendaftarSmkController::viewGuestSmk");
-$routes->get('/guestsmp', "PendaftarSmpController::viewGuestSmp");
+$routes->get('/guestsmk', "PendaftarSmkController::viewGuestSmk", ["filter" => "AdminFilters"]);
+$routes->get('/guestsmp', "PendaftarSmpController::viewGuestSmp", ["filter" => "AdminFilters"]);
 
 /*
  * --------------------------------------------------------------------

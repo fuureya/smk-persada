@@ -16,7 +16,6 @@ class PendaftarSmpController extends BaseController
             "body" => $validation
 
         ];
-
         return view('daftar-smp', $data);
     }
 
@@ -39,7 +38,7 @@ class PendaftarSmpController extends BaseController
                     "required" => "Tempat Lahir Wajib Di Isi"
                 ]
             ],
-            "ttl" => [
+            "tanggal" => [
                 "rules" => "required",
                 "errors" => [
                     "required" => "Tanggal Lahir Wajib Di Isi"
@@ -79,15 +78,15 @@ class PendaftarSmpController extends BaseController
         }
 
         $pendaftar->insert([
-            "nama_pendaftar" => $this->request->getPost('nama'),
-            "tempat-lahir" => $this->request->getPost("tempat"),
-            "ttl" => $this->request->getPost('ttl'),
-            "wa_siswa" => $this->request->getPost('no-wa'),
-            "nama-ortu" => $this->request->getPost('ortu'),
-            "wa_ortu" => $this->request->getPost('wa-wali'),
-            "siap_mengikuti" => $this->request->getPost('siap'),
-            "status_pendaftar" => "belum registrasi ulang",
-            "tanggal_daftar" => date("Y-m-d h-i-sa")
+            "nama_pendaftar" => htmlspecialchars($this->request->getPost('nama')),
+            "tempat-lahir" => htmlspecialchars($this->request->getPost("tempat")),
+            "tanggal-lahir" => htmlspecialchars($this->request->getPost("tanggal")),
+            "wa_siswa" => htmlspecialchars($this->request->getPost('no-wa')),
+            "nama-ortu" => htmlspecialchars($this->request->getPost('ortu')),
+            "wa_ortu" => htmlspecialchars($this->request->getPost('wa-wali')),
+            "siap_mengikuti" => htmlspecialchars($this->request->getPost('siap')),
+            "status_pendaftar" => htmlspecialchars("belum registrasi ulang"),
+            "tanggal_daftar" => htmlspecialchars(date("Y-m-d h-i-sa"))
         ]);
 
         return redirect()->back();
@@ -100,6 +99,20 @@ class PendaftarSmpController extends BaseController
             "title" => "admin",
             "body" => $pendafatar->findAll()
         ];
+
+        $guest = session()->get("member_username");
+        if ($guest == "ahmadguest") {
+            return redirect("guestsmp");
+        } else if ($guest == "oktaguest") {
+            return redirect("guestsmk");
+        }
+// block page jika bukan admin
+$guest = session()->get("member_username");
+if ($guest == "ahmadguest") {
+    return redirect("guestsmp");
+} else if($guest == "oktaguest") {
+    return redirect("guestsmk");
+}
         return view('admin/admin-smp', $data);
     }
 
@@ -110,6 +123,18 @@ class PendaftarSmpController extends BaseController
             "title" => "Monitor Pendaftar",
             "body" => $pendafatar->findAll()
         ];
+
+        $guest = session()->get("member_username");
+        if ($guest == "oktaguest") {
+            return redirect("guestsmk");
+        }
+        // block page jika bukan admin
+        $guest = session()->get("member_username");
+        if ($guest == "ahmadguest") {
+            return redirect("guestsmp");
+        } else if($guest == "oktaguest") {
+            return redirect("guestsmk");
+        }
         return view('admin/guest-smp', $data);
     }
 
@@ -117,6 +142,13 @@ class PendaftarSmpController extends BaseController
     {
         $namaPendaftar = new PendaftarSmpModel();
         $namaPendaftar->delete($nama);
+        // block page jika bukan admin
+        $guest = session()->get("member_username");
+        if ($guest == "ahmadguest") {
+            return redirect("guestsmp");
+        } else if($guest == "oktaguest") {
+            return redirect("guestsmk");
+        }
         return redirect('adminsmp');
     }
 
@@ -128,6 +160,14 @@ class PendaftarSmpController extends BaseController
             "title" => "admin",
             "body" => $id
         ];
+
+        // block page jika bukan admin
+        $guest = session()->get("member_username");
+        if ($guest == "ahmadguest") {
+            return redirect("guestsmp");
+        } else if($guest == "oktaguest") {
+            return redirect("guestsmk");
+        }
         return view('admin/adminEditSmp', $data);
     }
 
@@ -137,16 +177,23 @@ class PendaftarSmpController extends BaseController
         $pendaftar = new PendaftarSmpModel();
         $id = $pendaftar->where('id', $edit)->first();
         $updateData = [
-            "nama_pendaftar" => $this->request->getPost('nama_pendaftar'),
-            "tempat-lahir" => $this->request->getPost("tempat-lahir"),
-            "tanggal-lahir" => $this->request->getVar('tanggal-lahir'),
-            "wa_siswa" => $this->request->getPost('wa-pendaftar'),
-            "nama-ortu" => $this->request->getPost('nama-ortu'),
-            "wa_ortu" => $this->request->getPost('wa-wali'),
-            "status_pendaftar" => $this->request->getPost('status'),
-            "tanggal_edit" => date("Y-m-d h-i-sa")
+            "nama_pendaftar" => htmlspecialchars($this->request->getPost('nama_pendaftar')),
+            "tempat-lahir" => htmlspecialchars($this->request->getPost("tempat-lahir")),
+            "tanggal-lahir" => htmlspecialchars($this->request->getVar('tanggal-lahir')),
+            "wa_siswa" => htmlspecialchars($this->request->getPost('wa-pendaftar')),
+            "nama-ortu" => htmlspecialchars($this->request->getPost('nama-ortu')),
+            "wa_ortu" => htmlspecialchars($this->request->getPost('wa-wali')),
+            "status_pendaftar" => htmlspecialchars($this->request->getPost('status')),
+            "tanggal_edit" => htmlspecialchars(date("Y-m-d h-i-sa"))
         ];
         $pendaftar->update($id, $updateData);
+        // block page jika bukan admin
+        $guest = session()->get("member_username");
+        if ($guest == "ahmadguest") {
+            return redirect("guestsmp");
+        } else if($guest == "oktaguest") {
+            return redirect("guestsmk");
+        }
         return redirect('adminsmp');
     }
 }

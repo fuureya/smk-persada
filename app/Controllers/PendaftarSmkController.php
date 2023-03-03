@@ -27,6 +27,14 @@ class PendaftarSmkController extends BaseController
             "title" => "admin",
             "body" => $pendafatar->findAll()
         ];
+
+        $guest = session()->get("member_username");
+        if ($guest == "ahmadguest") {
+            return redirect("guestsmp");
+        } else if ($guest == "oktaguest") {
+            return redirect("guestsmk");
+        }
+
         return view('admin/admin-smk', $data);
     }
 
@@ -37,6 +45,11 @@ class PendaftarSmkController extends BaseController
             "title" => "Monitoring Pendaftar",
             "body" => $pendafatar->findAll()
         ];
+
+        $guest = session()->get("member_username");
+        if ($guest == "ahmadguest") {
+            return redirect("guestsmp");
+        }
         return view('admin/guest-smk', $data);
     }
 
@@ -123,6 +136,12 @@ class PendaftarSmkController extends BaseController
     {
         $namaPendaftar = new PendaftarSmkModel();
         $namaPendaftar->delete($nama);
+        $guest = session()->get("member_username");
+        if ($guest == "ahmadguest") {
+            return redirect("guestsmp");
+        } else if($guest == "oktaguest") {
+            return redirect("guestsmk");
+        }
         return redirect('admin');
     }
 
@@ -134,6 +153,13 @@ class PendaftarSmkController extends BaseController
             "title" => "admin",
             "body" => $id
         ];
+        // block page jika bukan admin
+        $guest = session()->get("member_username");
+        if ($guest == "ahmadguest") {
+            return redirect("guestsmp");
+        } else if($guest == "oktaguest") {
+            return redirect("guestsmk");
+        }
         return view('admin/adminEdit', $data);
     }
 
@@ -143,15 +169,22 @@ class PendaftarSmkController extends BaseController
         $pendaftar = new PendaftarSmkModel();
         $id = $pendaftar->where('id', $edit)->first();
         $updateData = [
-            "nama_pendaftar" => $this->request->getPost('nama_pendaftar'),
-            "tempat-lahir" => $this->request->getPost("tempat-lahir"),
-            "tanggal-lahir" => $this->request->getVar('tanggal-lahir'),
-            "wa_siswa" => $this->request->getPost('wa-pendaftar'),
-            "nama-ortu" => $this->request->getPost('nama-ortu'),
-            "wa_ortu" => $this->request->getPost('wa-wali'),
-            "status_pendaftar" => $this->request->getPost('status'),
-            "tanggal_edit" => date("Y-m-d h-i-sa")
+            "nama_pendaftar" => htmlspecialchars($this->request->getPost('nama_pendaftar')),
+            "tempat-lahir" => htmlspecialchars($this->request->getPost("tempat-lahir")),
+            "tanggal-lahir" => htmlspecialchars($this->request->getVar('tanggal-lahir')),
+            "wa_siswa" => htmlspecialchars($this->request->getPost('wa-pendaftar')),
+            "nama-ortu" => htmlspecialchars($this->request->getPost('nama-ortu')),
+            "wa_ortu" => htmlspecialchars($this->request->getPost('wa-wali')),
+            "status_pendaftar" => htmlspecialchars($this->request->getPost('status')),
+            "tanggal_edit" => htmlspecialchars(date("Y-m-d h-i-sa"))
         ];
+        // block page jika bukan admin
+        $guest = session()->get("member_username");
+        if ($guest == "ahmadguest") {
+            return redirect("guestsmp");
+        } else if($guest == "oktaguest") {
+            return redirect("guestsmk");
+        }
         $pendaftar->update($id, $updateData);
         return redirect('admin');
     }

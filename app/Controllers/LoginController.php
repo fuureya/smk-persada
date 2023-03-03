@@ -36,7 +36,7 @@ class LoginController extends BaseController
 
                 $passMember = $dataMember["member_password"];
                 // validasi password
-                if ($dataMember["member_password"] != $passMember) {
+                if ($dataMember["member_password"] != $member_password) {
                     $error = "password tidak sesuai hubungi admin";
                 }
             }
@@ -49,14 +49,13 @@ class LoginController extends BaseController
                 ];
                 session()->set($dataSesi);
 
-                if($dataSesi["member_username"] == 'oktaguest')
+                if ($dataSesi["member_username"] == 'oktaguest') {
+                    return redirect('guestsmk');
+                } else if ($dataSesi["member_username"] == 'ahmadguest') {
+                    return redirect('guestsmp');
+                } else if($dataSesi["member_username"] == 'admin')
                 {
-                    return redirect()->to('guestsmk');
-                }
-
-                if($dataSesi["member_username"] == 'ahmadguest')
-                {
-                    return redirect()->to('guestsmp');
+                    return redirect()->to(base_url('admin'));
                 }
             }
 
@@ -65,7 +64,7 @@ class LoginController extends BaseController
                 session()->setFlashdata('member_username', $member_username);
                 session()->setFlashdata('error', $error);
                 session()->setFlashdata('pass_salah', $error);
-                return redirect()->to('login');
+                return redirect()->to(base_url('login'));
             }
         }
         return view('login');
@@ -75,6 +74,6 @@ class LoginController extends BaseController
     public function logout()
     {
         session()->destroy();
-        return redirect()->to('login');
+        return redirect()->to(base_url('login'));
     }
 }

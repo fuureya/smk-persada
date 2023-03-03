@@ -13,13 +13,14 @@ class TelahLoginFilter implements FilterInterface
         // Do something here
         if(session()->get('member_id'))
         {
-            return redirect()->to('admin');
+            return redirect()->to(base_url('admin'));
         }
     }
 
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
         // Do something here
+        
         
     }
 }

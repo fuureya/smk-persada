@@ -26,7 +26,7 @@
                 </div>
                 <div class="form-group">
                     <label for="ttl">Tanggal Lahir</label>
-                    <input type="date" class="form-control" autocomplete="off" id="ttl" name="ttl" placeholder="Masukkan Tempat Tangal Lahir">
+                    <input type="date" class="form-control" autocomplete="off" id="ttl" name="tanggal" placeholder="Masukkan Tempat Tangal Lahir">
                 </div>
                 <div class="form-group">
                     <label for="no-wa">No Whatsapp Siswa</label>

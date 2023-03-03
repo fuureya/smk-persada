@@ -16,14 +16,17 @@ class AdminFilters implements FilterInterface
         {
             return redirect()->to('login');
         }
+
+        
     }
 
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
        
-        if(session()->get("member_username") != 'admin')
-        {
-            redirect()->back();
-        }
+        // if(session()->get("member_username") != 'admin')
+        // {
+        //     redirect()->back();
+        // }
+
     }
 }
