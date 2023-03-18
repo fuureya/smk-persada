@@ -28,9 +28,9 @@
                     <p class="nav-link dropdown-toggle text-light" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
                         Pendaftaran
                     </p>
-                    <div class="dropdown-menu dropdown-menu-left bg-dark">
-                        <a class="dropdown-item text-light" href="#">Daftar SMK</a>
-                        <a class="dropdown-item text-light" href="#">Daftar SMP</a>
+                    <div class="dropdown-menu dropdown-menu-left">
+                        <a class="dropdown-item text-light" href="/daftarsmk">Daftar SMK</a>
+                        <a class="dropdown-item text-light" href="/daftarsmp">Daftar SMP</a>
                     </div>
                 </li>
             </ul>

@@ -30,6 +30,11 @@ class LoginController extends BaseController
                 $error = "Silahkan Masukkan Username dan Password";
             }
 
+            if(!$this->member->where('member_username', $member_username)->first())
+            {
+                $error = "Username Tidak Terdaftar";
+            }
+
             // menggecek apakah username ada di dalam tabel atau tidak? 
             if (empty($error)) {
                 $dataMember = $this->member->where('member_username', $member_username)->first();

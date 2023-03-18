@@ -10,8 +10,23 @@
 }
 
 /* navbar style */
+
+.navbar {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
 .nav-item.mx-auto a {
     font-size: 1rem;
+}
+
+.dropdown-menu.dropdown-menu-left {
+    border: none;
+    background-color:#247938
+}
+
+.dropdown-menu.dropdown-menu-left >a {
+    background-color:#1d8135
 }
 
 .dropdown-menu.dropdown-menu-left.bg-dark {
@@ -78,29 +93,25 @@
     font-size: 14px;
 }
 
-.kenapa h3
-{ 
-        font-family: 'Poppins', sans-serif;
-        font-weight: bold;
+.kenapa h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
 }
 
 
 
-.kenapa b
-{ 
-        font-family: 'Poppins', sans-serif;
-        font-weight: bold;
+.kenapa b {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
 }
 
-.kenapa-desc > h3
-{ 
-        font-family: 'Poppins', sans-serif;
-        font-weight: bold;
+.kenapa-desc>h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
 
 }
 
-.kenapa-desc > .text-center > p
-{
+.kenapa-desc>.text-center>p {
     font-size: 5px;
 }
 
@@ -122,15 +133,13 @@
     font-size: 14px;
 }
 
-.kenapa-desc h3
-{
+.kenapa-desc h3 {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
     font-size: 14px;
 }
 
-.kenapa-desc p
-{
+.kenapa-desc p {
     font-size: 1rem;
 }
 
@@ -145,15 +154,20 @@
 .gallery {
     margin: 0;
     padding: 5px;
+
 }
 
-.gallery img {
+.gambar {
+    object-fit: cover;
+}
+
+.gambar img {
     width: 100%;
     filter: grayscale(100%);
     transition: 0.5s;
 }
 
-.gallery img:hover {
+.gambar img:hover {
     filter: grayscale(0);
     transform: scale(1.1);
 }
@@ -261,8 +275,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
-.guru h3
-{
+.guru h3 {
     font-weight: bold;
     font-family: 'Poppins', sans-serif;
 }
@@ -284,28 +297,24 @@
 }
 
 /* kontak */
-.container > h3
-{
+.container>h3 {
     font-weight: bold;
     font-family: 'Poppins', sans-serif;
 }
 
 /* pendaftaran */
-.row.my-5 .col-12 h3
-{
+.row.my-5 .col-12 h3 {
     font-weight: bold;
     font-family: 'Poppins', sans-serif;
     color: #333;
 }
 
-.form-group label
-{
+.form-group label {
     font-family: 'Poppins', sans-serif;
     color: #333;
 }
 
-.form-group input
-{
+.form-group input {
     border: 0.1px solid green;
 }
 

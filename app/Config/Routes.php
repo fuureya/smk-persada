@@ -29,10 +29,8 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', function(){
-    $data = ["title" => "Home"];
-    return view('index', $data);
-});
+$routes->get('/', 'Home::index');
+$routes->get('/gallery', 'Home::gallery');
 
 $routes->get('/about', function(){
     $data = ["title" => "About"];
@@ -88,3 +86,6 @@ $routes->get('/guestsmp', "PendaftarSmpController::viewGuestSmp", ["filter" => "
 if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
+
+
+

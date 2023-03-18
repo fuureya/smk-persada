@@ -4,7 +4,7 @@
     <div class="row my-5">
         <div class="col-12">
             <h3 class="text-center">Form Pendaftaran SMK PERSADA</h3>
-            <?php if (!empty(session()->getFlashdata('error'))) : ?>
+            <?php if ((session()->getFlashdata('error'))) : ?>
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                     <h4>Periksa Entrian Form</h4>
                     </hr />
@@ -14,6 +14,10 @@
                     </button>
                 </div>
             <?php endif; ?>
+            
+            <div class="pesan" data-pesan="<?= session()->getFlashdata('berhasil') ?>">
+
+            </div>
             <form class="mt-5" method="post" id="pendaftaran">
                 <?= csrf_field(); ?>
                 <div class="form-group">
@@ -30,7 +34,7 @@
                 </div>
                 <div class="form-group">
                     <label for="no-wa">No Whatsapp Siswa</label>
-                    <input type="number" class="form-control" autocomplete="off" id="no-wa" name="no-wa" placeholder="Masukkan No Whatsapp" >
+                    <input type="number" class="form-control" autocomplete="off" id="no-wa" name="no-wa" placeholder="Masukkan No Whatsapp">
                 </div>
                 <div class="form-group">
                     <label for="ortu">Masukkan Nama Orang Tua/Wali</label>

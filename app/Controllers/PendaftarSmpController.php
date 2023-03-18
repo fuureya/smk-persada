@@ -88,7 +88,7 @@ class PendaftarSmpController extends BaseController
             "status_pendaftar" => htmlspecialchars("belum registrasi ulang"),
             "tanggal_daftar" => htmlspecialchars(date("Y-m-d h-i-sa"))
         ]);
-
+        session()->setFlashdata('berhasil', 'Berhasil Mendaftar Di SMK PERSADA');
         return redirect()->back();
     }
 
@@ -101,18 +101,13 @@ class PendaftarSmpController extends BaseController
         ];
 
         $guest = session()->get("member_username");
+        // block page jika bukan admin
+        $guest = session()->get("member_username");
         if ($guest == "ahmadguest") {
             return redirect("guestsmp");
         } else if ($guest == "oktaguest") {
             return redirect("guestsmk");
         }
-// block page jika bukan admin
-$guest = session()->get("member_username");
-if ($guest == "ahmadguest") {
-    return redirect("guestsmp");
-} else if($guest == "oktaguest") {
-    return redirect("guestsmk");
-}
         return view('admin/admin-smp', $data);
     }
 
@@ -128,13 +123,6 @@ if ($guest == "ahmadguest") {
         if ($guest == "oktaguest") {
             return redirect("guestsmk");
         }
-        // block page jika bukan admin
-        $guest = session()->get("member_username");
-        if ($guest == "ahmadguest") {
-            return redirect("guestsmp");
-        } else if($guest == "oktaguest") {
-            return redirect("guestsmk");
-        }
         return view('admin/guest-smp', $data);
     }
 
@@ -144,9 +132,7 @@ if ($guest == "ahmadguest") {
         $namaPendaftar->delete($nama);
         // block page jika bukan admin
         $guest = session()->get("member_username");
-        if ($guest == "ahmadguest") {
-            return redirect("guestsmp");
-        } else if($guest == "oktaguest") {
+        if ($guest == "oktaguest") {
             return redirect("guestsmk");
         }
         return redirect('adminsmp');
@@ -163,9 +149,7 @@ if ($guest == "ahmadguest") {
 
         // block page jika bukan admin
         $guest = session()->get("member_username");
-        if ($guest == "ahmadguest") {
-            return redirect("guestsmp");
-        } else if($guest == "oktaguest") {
+        if ($guest == "oktaguest") {
             return redirect("guestsmk");
         }
         return view('admin/adminEditSmp', $data);
@@ -189,9 +173,7 @@ if ($guest == "ahmadguest") {
         $pendaftar->update($id, $updateData);
         // block page jika bukan admin
         $guest = session()->get("member_username");
-        if ($guest == "ahmadguest") {
-            return redirect("guestsmp");
-        } else if($guest == "oktaguest") {
+        if ($guest == "oktaguest") {
             return redirect("guestsmk");
         }
         return redirect('adminsmp');

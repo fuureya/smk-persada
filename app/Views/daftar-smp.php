@@ -14,6 +14,9 @@
                     </button>
                 </div>
             <?php endif; ?>
+            <div class="pesan" data-pesan="<?= session()->getFlashdata('berhasil') ?>">
+
+            </div>
             <form class="mt-5" method="post" id="pendaftaran">
                 <?= csrf_field(); ?>
                 <div class="form-group">

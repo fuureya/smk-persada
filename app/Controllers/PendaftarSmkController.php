@@ -113,7 +113,8 @@ class PendaftarSmkController extends BaseController
             ]
         ])) {
             session()->setFlashdata('error', $this->validator->listErrors());
-            return redirect()->back();
+            
+            return redirect()->to(base_url('/daftarsmk'));
         }
 
         date_default_timezone_set("Asia/Makassar");
@@ -129,7 +130,8 @@ class PendaftarSmkController extends BaseController
             "status_pendaftar" => htmlspecialchars("belum registrasi ulang"),
             "tanggal_daftar" => htmlspecialchars(date("Y-m-d h-i-sa"))
         ]);
-        return redirect()->back();
+        session()->setFlashdata('berhasil', 'Berhasil Mendaftar Di SMK PERSADA');
+        return redirect()->to(base_url('/daftarsmk'));
     }
 
     public function smkDelete($nama)

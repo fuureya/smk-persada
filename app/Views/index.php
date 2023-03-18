@@ -6,11 +6,11 @@
         <div class="col-12 col-md-12 p-0">
             <div class="jumbotron jumbotron-fluid p-0 m-0">
                 <div class="content d-flex justify-content-center align-items-center mb-5 mb-md-0 p-0">
-                    <div class="secs">
+                    <!-- <div class="secs">
                         <h1 class="lead text-center">Selamat Datang</h1>
                         <p class="text-center">SMK PERSADA</p>
                         <h3 class="text-center">Build Your Skill Build Your Career</h3>
-                    </div>
+                    </div> -->
                 </div>
                 <!-- carousel -->
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -21,13 +21,7 @@
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="https://media.istockphoto.com/id/1407271723/photo/gray-gradient-background.jpg?b=1&s=170667a&w=0&k=20&c=wR_0Nfhe5W2DYm_o94veFQ5PRoD6Y_9DPhuOpcNIgzA=" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="https://media.istockphoto.com/id/1407271723/photo/gray-gradient-background.jpg?b=1&s=170667a&w=0&k=20&c=wR_0Nfhe5W2DYm_o94veFQ5PRoD6Y_9DPhuOpcNIgzA=" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="https://media.istockphoto.com/id/1407271723/photo/gray-gradient-background.jpg?b=1&s=170667a&w=0&k=20&c=wR_0Nfhe5W2DYm_o94veFQ5PRoD6Y_9DPhuOpcNIgzA=" class="d-block w-100" alt="...">
+                            <img src="img/besar.png" class="d-block w-100" alt="...">
                         </div>
                     </div>
                 </div>
@@ -161,24 +155,18 @@
                 </div>
                 <div class="col-md-8 offset-md-2 col-12 d-flex justify-content-center">
                     <div class="row">
+                        <?php foreach($gambar as $gall) : ?>
                         <div class="col-md-4 col-6 p-0">
                             <div class="gallery">
-                                <a data-fslightbox="gallery" href="img/1.png"><img src="img/1.png" alt="1"></a>
+                               <div class="gambar">
+                               <a data-fslightbox="gallery" href="img/gallery/<?= $gall ?>"><img src="img/gallery/<?= $gall ?>" alt="1"></a>
+                               </div>
                             </div>
                         </div>
-                        <div class="col-md-4 col-6 p-0">
-                            <div class="gallery">
-                                <a data-fslightbox="gallery" href="img/2.png"><img src="img/2.png" alt="1"></a>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-6 p-0">
-                            <div class="gallery">
-                                <a data-fslightbox="gallery" href="img/1.png"><img src="img/1.png" alt="1"></a>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-6 p-0">
-                            <div class="gallery">
-                                <a data-fslightbox="gallery" href="img/2.png"><img src="img/2.png" alt="1"></a>
+                        <?php endforeach ?>
+                        <div class="col-12 col-md-12 mt-5">
+                            <div class="text-center">
+                            <a href="/gallery" class="btn btn-success">Lihat Selengkapnya</a>
                             </div>
                         </div>
                     </div>
