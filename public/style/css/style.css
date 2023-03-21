@@ -20,14 +20,6 @@
     font-size: 1rem;
 }
 
-.dropdown-menu.dropdown-menu-left {
-    border: none;
-    background-color:#247938
-}
-
-.dropdown-menu.dropdown-menu-left >a {
-    background-color:#1d8135
-}
 
 .dropdown-menu.dropdown-menu-left.bg-dark {
     border: none;
@@ -45,6 +37,13 @@
     z-index: 1;
     top: 0;
     bottom: 0;
+}
+
+.secs *
+{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color : white;
 }
 
 .secs .lead.text-center {

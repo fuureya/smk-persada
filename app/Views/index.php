@@ -6,11 +6,11 @@
         <div class="col-12 col-md-12 p-0">
             <div class="jumbotron jumbotron-fluid p-0 m-0">
                 <div class="content d-flex justify-content-center align-items-center mb-5 mb-md-0 p-0">
-                    <!-- <div class="secs">
+                    <div class="secs">
                         <h1 class="lead text-center">Selamat Datang</h1>
                         <p class="text-center">SMK PERSADA</p>
                         <h3 class="text-center">Build Your Skill Build Your Career</h3>
-                    </div> -->
+                    </div>
                 </div>
                 <!-- carousel -->
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -18,12 +18,34 @@
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="img/besar.png" class="d-block w-100" alt="...">
+                            <img src="img/jumbotron1.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/jumbotron2.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/jumbotron3.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/jumbotron4.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/jumbotron5.png" class="d-block w-100" alt="...">
                         </div>
                     </div>
+                    <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-target="#carouselExampleIndicators" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -155,18 +177,18 @@
                 </div>
                 <div class="col-md-8 offset-md-2 col-12 d-flex justify-content-center">
                     <div class="row">
-                        <?php foreach($gambar as $gall) : ?>
-                        <div class="col-md-4 col-6 p-0">
-                            <div class="gallery">
-                               <div class="gambar">
-                               <a data-fslightbox="gallery" href="img/gallery/<?= $gall ?>"><img src="img/gallery/<?= $gall ?>" alt="1"></a>
-                               </div>
+                        <?php foreach ($gambar as $gall) : ?>
+                            <div class="col-md-4 col-6 p-0">
+                                <div class="gallery">
+                                    <div class="gambar">
+                                        <a data-fslightbox="gallery" href="img/gallery/<?= $gall ?>"><img src="img/gallery/<?= $gall ?>" alt="1"></a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
                         <?php endforeach ?>
                         <div class="col-12 col-md-12 mt-5">
                             <div class="text-center">
-                            <a href="/gallery" class="btn btn-success">Lihat Selengkapnya</a>
+                                <a href="/gallery" class="btn btn-success">Lihat Selengkapnya</a>
                             </div>
                         </div>
                     </div>

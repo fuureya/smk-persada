@@ -29,8 +29,8 @@
                         Pendaftaran
                     </p>
                     <div class="dropdown-menu dropdown-menu-left">
-                        <a class="dropdown-item text-light" href="/daftarsmk">Daftar SMK</a>
-                        <a class="dropdown-item text-light" href="/daftarsmp">Daftar SMP</a>
+                        <a class="dropdown-item text-dark bg-light" href="/daftarsmk">Daftar SMK</a>
+                        <a class="dropdown-item text-dark bg-light" href="/daftarsmp">Daftar SMP</a>
                     </div>
                 </li>
             </ul>

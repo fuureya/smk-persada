@@ -37,8 +37,7 @@
                     <div class="col-md-4 col-12">
                         <h3>Media Social</h3>
                         <div>
-                            <a href="https://instagram.com"><i class="fa-brands fa-facebook"></i></a>
-                            <a href="https://facebook.com"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.instagram.com/persadaschool/"><i class="fa-brands fa-instagram"></i></a>
                         </div>
                     </div>
                     <div class="col-md-12 col-12 gutter-footer">
